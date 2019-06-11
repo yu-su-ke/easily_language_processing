@@ -17,7 +17,7 @@ setup(
     long_description=readme,
     author='mokky',
     author_email='',
-    install_requires=['numpy', 'mecab-python3', 'pandas', ],
+    install_requires=['numpy', 'mecab-python3', 'pandas', 'oseti'],
     url='',
     license=license,
     packages=find_packages(exclude=('tests', 'docs')),
