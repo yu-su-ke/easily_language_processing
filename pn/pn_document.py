@@ -45,31 +45,33 @@ def pn_tweets(text):
             pn = float(pn_dict[base])  # 中身の型があれなので
             word['PN'] = pn
             dic_pn.append(word)
+            print(word)
         else:
             pn = 'notfound'  # その語がPN Tableになかった場合
             word['PN'] = pn
             dic_pn.append(word)
 
     pn_list = []
+    pn_add = 0
     # 各ツイートのPN値の平均を算出
     for word in dic_pn:
         pn = word['PN']
         if pn != 'notfound':
             pn_list.append(pn)  # notfoundだった場合は追加もしない
+            pn_add += pn
     if len(pn_list) > 0:  # 「全部notfound」じゃなければ
         pn_mean = mean(pn_list)
     else:
         pn_mean = 0  # 全部notfoundならゼロにする
 
-
     # 確認用
-    # print('\n' + str(diclist_new))
-    # print(pn_mean)
+    # print('\n' + str(dic_pn))
+    # print(pn_add)
 
-    return pn_mean
+    return str(pn_mean), str(pn_add)
 
 
 if __name__ == '__main__':
     file_name = 'test'
     with open('./document/' + file_name + '.txt', mode='w', encoding="utf-8") as text_file:
-        print(pn_tweets(text_file))
+        print('平均 : ' + pn_tweets(text_file.read())[0] + '合計 : ' + pn_tweets(text_file.read())[1])
