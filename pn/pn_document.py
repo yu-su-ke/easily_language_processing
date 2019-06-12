@@ -8,7 +8,7 @@ from statistics import mean
 
 def pn_tweets(text):
     # pnTableの用意
-    pn_df = pd.read_csv('pnTable.txt',
+    pn_df = pd.read_csv('./pn/pnTable.txt',
                         sep=':',
                         quoting=csv.QUOTE_NONE,
                         encoding='utf-8',
@@ -73,5 +73,7 @@ def pn_tweets(text):
 
 if __name__ == '__main__':
     file_name = 'test'
-    with open('./document/' + file_name + '.txt', mode='w', encoding="utf-8") as text_file:
-        print('平均 : ' + pn_tweets(text_file.read())[0] + '合計 : ' + pn_tweets(text_file.read())[1])
+    with open('./document/' + file_name + '.txt', mode='r', encoding="utf-8") as text_file:
+        average, pn_sum = pn_tweets(text_file.read())
+
+    print('平均 : ' + average + '合計 : ' + pn_sum)

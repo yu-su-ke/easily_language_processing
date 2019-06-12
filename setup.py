@@ -17,7 +17,7 @@ setup(
     long_description=readme,
     author='yu-su-ke',
     author_email='',
-    install_requires=['numpy', 'mecab-python3', 'pandas', 'oseti', 'gensim'],
+    install_requires=['numpy', 'mecab-python3', 'pandas', 'oseti', 'gensim', 'matplotlib', 'wordcloud'],
     url='',
     license=license,
     packages=find_packages(exclude=('tests', 'docs')),

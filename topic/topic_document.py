@@ -17,7 +17,7 @@ def topic(words, file_path):
 
     # トピックモデルの作成
     lda = gensim.models.LdaModel(corpus=corpus, id2word=dictionary,
-                                 num_topics=50, minimum_probability=0.001,
+                                 num_topics=5, minimum_probability=0.001,
                                  passes=20, update_every=0, chunksize=10000)
 
     # topic_top = []

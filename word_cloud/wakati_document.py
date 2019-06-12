@@ -40,7 +40,8 @@ def wakati(text, part):
                 #     output.append(node.surface)
             elif part == '':
                 if node.surface not in stop_words:
-                    output.append(node.surface)
+                    if len(node.surface) > 1:
+                        output.append(node.surface)
         node = node.next
         if node is None:
             break
