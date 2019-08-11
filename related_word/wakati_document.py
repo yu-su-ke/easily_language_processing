@@ -46,6 +46,7 @@ def wakati(text, part):
             break
 
     # print(output)
+    # 戻り値：str型、list型
     return str(output), output
 
 

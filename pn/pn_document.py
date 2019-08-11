@@ -8,6 +8,7 @@ from statistics import mean
 
 def pn_tweets(text):
     # pnTableの用意
+    print(text)
     pn_df = pd.read_csv('./pn/pnTable.txt',
                         sep=':',
                         quoting=csv.QUOTE_NONE,

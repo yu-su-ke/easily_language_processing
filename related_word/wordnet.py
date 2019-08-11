@@ -5,7 +5,7 @@ import re
 
 class SimilarWord:
     def __init__(self):
-        self.connection = sqlite3.connect("wnjpn.db")  # データベース
+        self.connection = sqlite3.connect("./related_word/wnjpn.db")  # データベース
 
     # 確認用　普段は使わない
     def confirm_database(self):
@@ -76,7 +76,7 @@ class SimilarWord:
     def save_csv(self, word, value):
         df = pd.DataFrame([[word, value]])
         # CSV ファイルとして出力
-        df.to_csv("./result/result.csv", mode='a', header=False, index=False)
+        df.to_csv("related_word/result/result.csv", mode='a', header=False, index=False)
 
 
 if __name__ == '__main__':
