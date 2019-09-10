@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import platform
 
+# from wakati_document import wakati
+
 
 def create_cloud(word_list):
     pf = platform.system()
@@ -27,3 +29,14 @@ def create_cloud(word_list):
     plt.imshow(word_cloud)
     plt.axis("off")
     plt.show()
+
+
+if __name__ in '__main__':
+    part = ''
+
+    with open('./document/test.txt', mode='r', encoding='utf-8') as text_file:
+        text, test = wakati(text_file.read(), part)
+
+    word_list = " ".join(test)
+    print(word_list)
+    create_cloud(word_list)

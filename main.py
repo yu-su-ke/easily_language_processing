@@ -12,8 +12,8 @@ with open('./document/' + file_name + '.txt', mode='r', encoding="utf-8") as tex
 wakati_text = wakati(text, part)[1]
 pn_sum, pn_average = pn_oseti(text)
 
-# ワードクラウド
-create_cloud(wakati_text)
+word_list = " ".join(wakati_text)
+# create_cloud(word_list)
 
 # 関連語
 wn = SimilarWord()
