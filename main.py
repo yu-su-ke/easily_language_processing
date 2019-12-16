@@ -31,6 +31,7 @@ pn_sum, pn_average = pn_oseti(text)
 print('平均 : ' + str(pn_average) + '合計 : ' + str(pn_sum))
 
 # トピックの抽出
+# トピック抽出は多くの文書が必要になるので、livedoorコーパスなどを使います
 dir_name = './document/livedoor/dokujo-tsushin'
 word_list = []
 for file_name in glob(dir_name + '/*.txt'):
