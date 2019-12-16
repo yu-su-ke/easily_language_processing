@@ -13,22 +13,22 @@ with open('./document/' + file_name + '.txt', mode='r', encoding="utf-8") as tex
     text = text_file.read()
 wakati_text = wakati(text, part)
 
-# # ワードクラウドの作成
-# print('ワードクラウド作成中・・・')
-# word_list = " ".join(wakati_text)
-# create_cloud(word_list)
-# print('ワードクラウド完成!')
-#
-# # 関連語の抽出
-# print('関連語の抽出中・・・')
-# wn = SimilarWord()
-# for word in tqdm(wakati_text):
-#     wn.similar_word(word)
-# print('関連語の抽出終了！')
-#
-# # pn値の算出
-# pn_sum, pn_average = pn_oseti(text)
-# print('平均 : ' + str(pn_average) + '合計 : ' + str(pn_sum))
+# ワードクラウドの作成
+print('ワードクラウド作成中・・・')
+word_list = " ".join(wakati_text)
+create_cloud(word_list)
+print('ワードクラウド完成!')
+
+# 関連語の抽出
+print('関連語の抽出中・・・')
+wn = SimilarWord()
+for word in tqdm(wakati_text):
+    wn.similar_word(word)
+print('関連語の抽出終了！')
+
+# pn値の算出
+pn_sum, pn_average = pn_oseti(text)
+print('平均 : ' + str(pn_average) + '合計 : ' + str(pn_sum))
 
 # トピックの抽出
 dir_name = './document/livedoor/dokujo-tsushin'
