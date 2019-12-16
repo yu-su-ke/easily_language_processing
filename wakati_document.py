@@ -38,7 +38,7 @@ def wakati(text, part):
             break
 
     # print(output)
-    return str(output), output
+    return output
 
 
 def format_text(text):

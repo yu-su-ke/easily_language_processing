@@ -2,8 +2,6 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import platform
 
-# from wakati_document import wakati
-
 
 def create_cloud(word_list):
     pf = platform.system()
