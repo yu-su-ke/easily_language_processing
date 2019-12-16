@@ -11,7 +11,8 @@ with open('./document/' + file_name + '.txt', mode='r', encoding="utf-8") as tex
 wakati_text = wakati(text, part)
 
 # ワードクラウドの作成
-# create_cloud(wakati_text)
+word_list = " ".join(wakati_text)
+create_cloud(word_list)
 
 # 関連語の抽出
 wn = SimilarWord()
