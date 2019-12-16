@@ -26,8 +26,8 @@ def create_cloud(word_list):
     plt.figure(figsize=(20, 12))
     plt.imshow(word_cloud)
     plt.axis("off")
-    # plt.show()
-    plt.savefig('./test1.png')
+    plt.show()
+    # plt.savefig('./test.png')
 
 
 if __name__ in '__main__':

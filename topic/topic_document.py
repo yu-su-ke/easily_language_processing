@@ -4,7 +4,7 @@ import pandas
 import numpy as np
 
 
-def topic(words, file_path):
+def topic(words):
     dictionary = corpora.Dictionary(words)
     dictionary.filter_extremes(no_below=2, no_above=0.01)
 
@@ -27,8 +27,8 @@ def topic(words, file_path):
     # topic_data = pandas.DataFrame(topic_top)
     # topic_data.to_csv(file_path + "topic_word.csv", encoding='utf-8')
 
-    for i in range(50):
-        print('topic_{0}: {1}'.format(i, lda.print_topic(i)[0:80] + '...'))
+    for i in range(5):
+        print('topic_{0}: {1}'.format(i, lda.print_topic(i) + '...'))
 
 
 def topic_detail(words):

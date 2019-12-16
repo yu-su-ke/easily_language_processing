@@ -1,6 +1,7 @@
+import re
+
 import sqlite3
 import pandas as pd
-import re
 
 
 class SimilarWord:
@@ -12,12 +13,14 @@ class SimilarWord:
         # 含まれるテーブルの要素の確認
         confirm_table = self.connection.execute("select name from sqlite_master where type='table'")
         for row in confirm_table:
-            print(row)
+            # print(row)
+            pass
 
         # データの確認
         confirm_data = self.connection.execute("select* from word limit 20")
         for row in confirm_data:
-            print(row)
+            # print(row)
+            pass
 
     def search_similar_word(self, word):
         # 問い合わせた単語がWordnetに存在するかを確認する
@@ -26,11 +29,12 @@ class SimilarWord:
         for row in query:
             word_id = row[0]
         if word_id == 99999999:
-            print('「%s」は、Wordnetに存在しない単語です。' % word)
+            # print('「%s」は、Wordnetに存在しない単語です。' % word)
             # 存在しない場合は処理打ち切り
             return
         else:
-            print('「%s」の類義語を出力します。' % word)
+            # print('「%s」の類義語を出力します。' % word)
+            pass
 
         # 存在する場合は単語を含む概念を検索する
         query_concept = self.connection.execute("select synset from sense where wordid='%s'" % word_id)
@@ -44,12 +48,13 @@ class SimilarWord:
             # 概念検索
             search_concept = self.connection.execute("select name from synset where synset='%s'" % concept_set)
             for row1 in search_concept:
-                print('%sつめの概念 : %s' % (number_concept, row1[0]))
+                # print('%sつめの概念 : %s' % (number_concept, row1[0]))
+                pass
             # 意味検索
             search_meaning = self.connection.execute("select def from synset_def where (synset='%s' and lang='jpn')" % concept_set)
             number_meaning = 1
             for row2 in search_meaning:
-                print("意味%s : %s" % (number_meaning, row2[0]))
+                # print("意味%s : %s" % (number_meaning, row2[0]))
                 number_meaning += 1
             # 類義語検索
             search_word = self.connection.execute("select wordid from sense where (synset='%s' and wordid!=%s)" % (concept_set, word_id))
@@ -58,13 +63,13 @@ class SimilarWord:
                 target_word_id = row3[0]
                 search_word_detail = self.connection.execute("select lemma from word where wordid=%s AND lang='jpn'" % target_word_id)
                 for row3_1 in search_word_detail:
-                    # 類義語から英語を弾いた上で上位5件のものを保存
-                    if number_word <= 5:
-                        print("類義語%s : %s" % (number_word, row3_1[0]))
+                    # 類義語から英語を弾いた上で上位3件のものを保存
+                    if number_word <= 3:
+                        # print("類義語%s : %s" % (number_word, row3_1[0]))
                         self.save_csv(word, row3_1[0])
                         number_word += 1
 
-            print('\n')
+            # print('\n')
             number_concept += 1
 
     def similar_word(self, data):
