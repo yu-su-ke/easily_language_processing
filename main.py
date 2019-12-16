@@ -8,7 +8,7 @@ from related_word.wordnet import SimilarWord
 from topic.topic_document import topic
 
 part = '名詞'   # 品詞の指定
-file_name = 'kokoro_format'
+file_name = 'kokoro_format'     # 文書名の指定
 with open('./document/' + file_name + '.txt', mode='r', encoding="utf-8") as text_file:
     text = text_file.read()
 wakati_text = wakati(text, part)
