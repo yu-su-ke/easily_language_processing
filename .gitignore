@@ -3,5 +3,6 @@ venv
 __pycache__
 .DS_Store
 
-pn/pnTable.txt
+positive_negative/pnTable.txt
 wnjpn.db
+document/livedoor
