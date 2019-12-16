@@ -4,7 +4,9 @@
 次に各単語の関連語をwordnetにより提案することができ、言語データの増加（augmentation）を行うことができます。  
 また、文書全体のトピックの抽出、ワードクラウドを用いた文書内の頻出単語の可視化ができるようになっています。  
 あまり言語処理に慣れていない人が手軽に言語処理の代表的なアプローチを行うことができるシステムです。  
-コードのアピールポイントは上記の処理をそれぞれモジュール化しており、コードのメンテナンス性や可視性を上げています。  
 テキストコーパスには青空文庫の夏目漱石の作品やlivedoorコーパスを用いています。  
 
-livedoorコーパスはhttps://www.rondhuit.com/download.htmlから
+livedoorコーパスはhttps://www.rondhuit.com/download.html からダウンロードし、document以下に置いてください。
+```
+easily_language_processing/document/livedoor/...
+```
