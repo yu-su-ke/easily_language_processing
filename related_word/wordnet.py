@@ -5,7 +5,7 @@ import re
 
 class SimilarWord:
     def __init__(self):
-        self.connection = sqlite3.connect("./related_word/wnjpn.db")  # データベース
+        self.connection = sqlite3.connect("./wnjpn.db")  # データベース
 
     # 確認用　普段は使わない
     def confirm_database(self):

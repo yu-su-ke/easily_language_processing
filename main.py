@@ -1,6 +1,6 @@
 from word_cloud.wakati_document import wakati
 from word_cloud.wordcloud_document import create_cloud
-from pn.main_oseti import pn_oseti
+from positive_negative.main_oseti import pn_oseti
 from related_word.wordnet import SimilarWord
 
 part = '名詞'   # 品詞の指定

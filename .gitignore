@@ -4,4 +4,4 @@ __pycache__
 .DS_Store
 
 pn/pnTable.txt
-related_word/wnjpn.db
+wnjpn.db
